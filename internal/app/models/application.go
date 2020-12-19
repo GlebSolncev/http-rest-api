@@ -1,5 +1,11 @@
 package models
 
+//var (
+//	table = "applications"
+//)
+
+const ApplicationTable = "applications"
+
 type Application struct {
 	Id     int
 	Slug   string
