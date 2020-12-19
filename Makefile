@@ -1,4 +1,4 @@
-.PHONY: build test help
+.PHONY: build test help migrate-up migrate-down mmm
 
 help: ## Show this help
 	printf "\033[33m%s:\033[0m\n" 'Available commands'
@@ -9,5 +9,11 @@ build: ## Build you project on spaghetti-code
 
 test: ## Testing project
 	go test -v -race -timeout 30s ./...
+
+migrate-up: ## Migrations tables
+	migrate -path migrations -database "mysql://root:myrootpassword@tcp(localhost:3306)/go-rest" up
+
+migrate-down: ## Rollback migration tables
+	migrate -path migrations -database "mysql://root:myrootpassword@tcp(localhost:3306)/go-rest" down
 
 .DEFAULT_GOAL := build
