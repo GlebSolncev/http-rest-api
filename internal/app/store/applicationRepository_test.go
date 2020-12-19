@@ -7,6 +7,7 @@ import (
 	"testing"
 )
 
+// TestApplicationReposiroty_Create ...
 func TestApplicationReposiroty_Create(t *testing.T) {
 	s, teardown := store.TestStore(t, databaseURL)
 	defer teardown("applications")
