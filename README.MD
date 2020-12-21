@@ -1,5 +1,6 @@
 # Hello World!
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.com/GlebSolncev/http-rest-api.svg?branch=master)](https://travis-ci.com/GlebSolncev/http-rest-api)
+
 #### use GoLang v 1.14
 ![alt text](https://hackernoon.com/drafts/0fnv29qd.png)
 
