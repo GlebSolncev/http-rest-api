@@ -3,30 +3,27 @@ package main
 import (
 	"flag"
 	"github.com/BurntSushi/toml"
-	"github.com/GlebSolncev/http-rest-api/internal/app/apiServer"
-	"log"
+	"github.com/GlebSolncev/http-rest-api/app"
+	"github.com/GlebSolncev/http-rest-api/internal/apiServer"
 )
-//11:31
+
 var (
 	configPath string
 )
 
-func init(){
-	flag.StringVar(&configPath, "config-path", "configs/apiServer.toml", "Path to config file.")
+// constructor ...
+func init() {
+	flag.StringVar(&configPath, "config", "config.toml", "Path to config file.")
 }
 
-func main()  {
+func main() {
 	flag.Parse()
 	config := apiServer.NewConfig()
+
 	_, err := toml.DecodeFile(configPath, config)
-	if err != nil{
-		log.Fatal(err)
-	}
+	app.Check(err)
 
 	s := apiServer.New(config)
-	if err := s.Start(); err != nil{
-		log.Fatal(err)
-	}
-
-
+	err = s.Start()
+	app.Check(err)
 }

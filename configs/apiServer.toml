@@ -1,5 +1,0 @@
-bind_addr = ":9000"
-log_level = "debug"
-
-[store]
-database_url = "root:myrootpassword@tcp(localhost:3306)/go-rest"

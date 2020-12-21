@@ -1,0 +1,9 @@
+bind_addr = ":9000"
+log_level = "debug"
+
+[database]
+DB_HOST = "localhost"
+DB_PORT = 3306
+DB_USER = "root"
+DB_NAME = "go-rest"
+DB_PASSWORD = "myrootpassword"
